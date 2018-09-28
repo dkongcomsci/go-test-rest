@@ -7,20 +7,7 @@
 #
 # Create build image
 #
-FROM centos:latest as build
-
-# Update image
-RUN yum -y update
-
-# Install EPEL
-RUN yum -y install epel-release
-
-# Install Dev tools
-RUN yum -y groupinstall "Development Tools"
-
-# Install Go
-RUN curl -s https://mirror.go-repo.io/centos/go-repo.repo | tee /etc/yum.repos.d/go-repo.repo && yum -y install golang
-RUN yum -y install golang
+FROM golang:latest
 
 # Install Oracle Instantclient
 WORKDIR /tmp
