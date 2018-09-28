@@ -7,7 +7,7 @@
 #
 # Create build image
 #
-FROM golang:latest 
+FROM centos:latest
 
 # Update image
 RUN yum -y update
